@@ -9,15 +9,12 @@ public class Palindrome {
         int tempX = x;
         int rev = 0;
 
-        if (x<0){
+        if (x<0 || (x % 10 == 0 && x != 0)){
             return false;
-        } else if (x==0) {
-            return true;
         }
 
         while(x>0){
-            int mod = x%10;
-            rev = (rev*10+mod);
+            rev = (rev*10+(x%10));
             x = x/10;
         }
         return rev==tempX;
